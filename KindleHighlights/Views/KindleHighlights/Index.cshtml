@@ -1,0 +1,12 @@
+﻿
+@{
+    ViewBag.Title = "KindleHighlights";
+}
+
+<h2>KindleHighlights</h2>
+@ViewBag.Test
+
+@foreach (var item in ViewBag.KindleHighlights)
+{
+    <span>@item.PartitionKey</span>
+}
