@@ -15,9 +15,9 @@ namespace KindleHighlights.Controllers
         {
 
             CloudTableFactory factory = new CloudTableFactory();
-
+            
             Data d = new Data();
-            var items = d.GetAllItems(factory.GetKindleTableReference("kindleHighlightstest"));
+            var items = d.GetAllItems(factory.GetKindleTable("highlights"));
 
             ViewBag.KindleHighlights = items;
 

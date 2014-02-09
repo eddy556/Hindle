@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Web;
+using KindleHighlights.Models;
+using Microsoft.WindowsAzure.Storage.Table.DataServices;
 
 namespace KindleHighlights
 {
@@ -12,22 +14,23 @@ namespace KindleHighlights
     {       
         public void AddItem(CloudTable table)
         {
-            HighlightEntity item = new HighlightEntity("title2", "author3")
-            { pageNo = 1, location = 1, dateAdded = null };
+            //HighlightEntity item = new HighlightEntity("title2", "author3")
+            //{ pageNo = 1, location = 1, dateAdded = null };
 
-            // Create the TableOperation that inserts the customer entity.
-            TableOperation insertOperation = TableOperation.Insert(item);
+            //// Create the TableOperation that inserts the customer entity.
+            //TableOperation insertOperation = TableOperation.Insert(item);
 
-            // Execute the insert operation.
-            table.Execute(insertOperation);
+            //// Execute the insert operation.
+            //table.Execute(insertOperation);
         }
 
         public IEnumerable<HighlightEntity> GetAllItems(CloudTable table)
         {
-            // Construct the query operation for all customer entities where PartitionKey="Smith".
-            TableQuery<HighlightEntity> query = new TableQuery<HighlightEntity>();
+            var query = new TableQuery<HighlightEntity>();
 
-            return table.ExecuteQuery(query);          
+            var results = table.ExecuteQuery<HighlightEntity>(query);
+
+            return results.ToList<HighlightEntity>();         
 
         }
     }

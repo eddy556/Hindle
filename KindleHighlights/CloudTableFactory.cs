@@ -28,6 +28,15 @@ namespace KindleHighlights
             return table;
         }
 
+        public CloudTable GetKindleTable(string tableName)
+        {
+            // Create the table client.
+            CloudTableClient tableClient = Account().CreateCloudTableClient();
+
+            return tableClient.GetTableReference(tableName);
+        }
+
+
 
 
     }
