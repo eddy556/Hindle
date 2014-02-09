@@ -1,4 +1,5 @@
-﻿
+﻿@model IEnumerable<KindleHighlights.Models.HighlightEntity>
+
 @{
     ViewBag.Title = "KindleHighlights";
 }
@@ -6,7 +7,28 @@
 <h2>KindleHighlights</h2>
 @ViewBag.Test
 
-@foreach (var item in ViewBag.KindleHighlights)
-{
-    <span>@item.PartitionKey</span>
-}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReleaseDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Genre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th></th>
+    </tr>
+
+
+
+
+    @*@foreach (var item in ViewBag.KindleHighlights)
+    {
+        <span>@item.PartitionKey</span>
+    }*@

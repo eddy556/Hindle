@@ -13,7 +13,6 @@ namespace KindleHighlights.Controllers
         // GET: /KindleHighlights/
         public ActionResult Index()
         {
-
             CloudTableFactory factory = new CloudTableFactory();
             
             Data d = new Data();
