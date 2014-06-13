@@ -9,13 +9,13 @@ namespace KindleHighlights.Models
 {
     public class HighlightEntity : Microsoft.WindowsAzure.Storage.Table.TableEntity
     {
-        string title {get; set;}
-        string author {get; set;}
-        int pageNumber {get; set;}
-        int locationStart {get; set;}
-        int locationEnd {get; set;}
-        DateTime highlightedDate {get; set;}
-        string hightlightedText {get; set;}
+       public string title {get; set;}
+       public string author {get; set;}
+       public int pageNumber {get; set;}
+       public int locationStart {get; set;}
+       public int locationEnd {get; set;}
+       public DateTime highlightedDate {get; set;}
+       public string highlightedText {get; set;}
         
     }
 }

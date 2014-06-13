@@ -30,7 +30,12 @@ namespace KindleHighlights
 
             var results = table.ExecuteQuery<HighlightEntity>(query);
 
+            Nullable<int> value = new Nullable<int>(2);
+            Nullable<Nullable<int>> value1 = new Nullable<Nullable<int>>
+
             return results.ToList<HighlightEntity>();         
+
+
 
         }
     }

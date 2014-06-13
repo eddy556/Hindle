@@ -11,24 +11,36 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.)
+            @Html.DisplayNameFor(model => model.title)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ReleaseDate)
+            @Html.DisplayNameFor(model => model.author)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Genre)
+            @Html.DisplayNameFor(model => model.pageNumber)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Price)
+            @Html.DisplayNameFor(model => model.locationStart)
         </th>
-        <th></th>
+        <th>
+            @Html.DisplayNameFor(model => model.locationEnd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.highlightedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.highlightedText)
+        </th>
     </tr>
-
-
-
-
-    @*@foreach (var item in ViewBag.KindleHighlights)
-    {
-        <span>@item.PartitionKey</span>
-    }*@
+    
+        @foreach (var item in Model)
+        {
+            <tr>
+            <td>@Html.DisplayFor(modelItem => item.author)</td>
+            <td>@Html.DisplayFor(modelItem => item.pageNumber)</td>
+            <td>@Html.DisplayFor(modelItem => item.locationStart)</td>
+            <td>@Html.DisplayFor(modelItem => item.locationEnd)</td>
+            <td>@Html.DisplayFor(modelItem => item.highlightedDate)</td>
+            <td>@Html.DisplayFor(modelItem => item.highlightedText)</td>
+            </tr>
+        }
